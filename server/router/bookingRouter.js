@@ -17,7 +17,9 @@ router.get("/api/booking", async (req, res) => {
   try {
     const lastBooking = await Booking.find().sort({ _id: -1 }).limit(1);
     if (!lastBooking) {
-      res.status(404).json({ status: "error", message: "No bookings found" });
+      res
+        .status(404)
+        .json({ status: "error", message: "No previous bookings found" });
     } else {
       res.status(200).json({ status: "success", data: lastBooking });
     }

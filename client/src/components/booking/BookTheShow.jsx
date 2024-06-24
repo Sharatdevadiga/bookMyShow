@@ -44,7 +44,7 @@ function BookTheShow() {
     try {
       const res = await axios({
         method: "post",
-        url: "http://localhost:8080/api/booking",
+        url: "/api/booking",
         data: {
           movie: selectedMovie,
           slot: selectedTime,
