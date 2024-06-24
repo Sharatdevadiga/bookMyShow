@@ -1,0 +1,249 @@
+:root {
+  --brand-color: #dc2626;
+  --brand-color-light1: #ef4444;
+  --brand-color-light2: #fee2e2;
+  --brand-color-dark1: #7f1d1d;
+  --brand-color-dark2: #450a0a;
+  --background-color: #000;
+
+  --danger-color: rgba(220, 38, 38, 0.9);
+  --success-color: rgba(16, 185, 129, 0.9);
+}
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: #fef2f2;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  line-height: 1.6;
+  background-color: #000;
+}
+
+/* body::-webkit-scrollbar {
+  display: none;
+} */
+
+*::-webkit-scrollbar {
+  width: 4px;
+}
+*::-webkit-scrollbar-thumb {
+  background: #333;
+}
+/* general styles */
+.flex-h-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-v-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.heading-primary {
+  font-size: 4.4rem;
+  font-weight: 700;
+  margin-bottom: 1.6rem;
+}
+
+.heading-secondary {
+  font-size: 2.4rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 3.6rem;
+}
+
+.heading-tertiary {
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 1.6rem;
+}
+
+/* p {
+  font-size: 1.6rem !important;
+} */
+
+.button {
+  padding: 0.8rem 2.4rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  border-radius: 2rem;
+  border: 2px solid var(--brand-color-dark1);
+  background: none;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.button:hover {
+  background-color: var(--brand-color-dark2);
+}
+
+.button:active {
+  transform: scale(0.96);
+}
+
+.button-cta,
+.button-selected {
+  background-color: var(--brand-color);
+}
+
+#root {
+  position: relative;
+}
+
+/* NEDIA QUERRIES */
+@media screen and (max-width: 768px) {
+  .heading-primary {
+    font-size: 3.6rem;
+  }
+
+  .heading-secondary {
+    font-size: 2rem;
+  }
+
+  .heading-tertiary {
+    font-size: 1.6rem;
+  }
+
+  .button {
+    padding: 0.6rem 2rem;
+    font-size: 1.2rem;
+  }
+
+  .slider-button {
+    width: 4.4rem;
+    height: 4.4rem;
+  }
+
+  .contentCircle {
+    width: 12rem;
+    height: 12rem;
+    padding: 1.6rem;
+    font-size: 1.2rem;
+  }
+
+  .seat-button {
+    width: 2.4rem;
+    height: 2.4rem;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+  }
+
+  .nav-button-container {
+    gap: 0.6rem;
+  }
+
+  .nav-logo {
+    height: 3.6rem;
+  }
+
+  .prevBooking-container {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .heading-primary {
+    font-size: 3rem;
+  }
+
+  .heading-secondary {
+    font-size: 1.8rem;
+  }
+
+  .heading-tertiary {
+    font-size: 1.4rem;
+  }
+
+  p {
+    font-size: 1.2rem !important;
+  }
+
+  .slider-button {
+    width: 3.6rem;
+    height: 3.6rem;
+  }
+
+  .contentCircle {
+    width: 10rem;
+    height: 10rem;
+    padding: 1.2rem;
+    font-size: 1rem;
+  }
+
+  .seat-row,
+  .seat-container {
+    gap: 0.8rem;
+  }
+
+  .seat-button {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+  }
+
+  .nav-button-container {
+    gap: 0.4rem;
+    display: none;
+  }
+
+  .ham-button {
+    display: inline-block;
+  }
+
+  .prevBooking-container {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .contentCircle {
+    width: 8rem;
+    height: 8rem;
+    padding: 1rem;
+    font-size: 0.8rem;
+  }
+
+  .seat-row,
+  .seat-container {
+    gap: 0.6rem;
+  }
+
+  .seat-button {
+    width: 1.6rem;
+    height: 1.6rem;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+  }
+
+  .prevBooking-container {
+    width: 100%;
+  }
+}

@@ -1,0 +1,93 @@
+/* Navbar */
+.nav-container {
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(10px);
+}
+
+.nav {
+  position: relative;
+  padding: 4px 8px;
+}
+
+.nav::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  height: 10px;
+  /* box-shadow: 0 4px 10px rgba(255, 255, 255, 0.4); */
+}
+
+.nav-logo {
+  height: 4.4rem;
+}
+
+.nav-button-container {
+  display: flex;
+  gap: 1.6rem;
+  align-items: center;
+  padding: 0 1.6rem;
+}
+
+.nav-button {
+  background: #000000a2;
+  backdrop-filter: blur(40px);
+  border: none;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+
+  border-radius: 11px;
+  padding: 0.4rem 0.8rem;
+  transition: all 0.3s;
+}
+
+.nav-button:hover {
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
+}
+
+.nav-button:active {
+  transform: scale(0.96);
+}
+
+.nav-bar-container-mobile {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  position: fixed;
+  right: 10px;
+  top: 4.5rem;
+  z-index: 15;
+
+  background: #111;
+  padding: 1.2rem;
+  border-radius: 11px;
+  backdrop-filter: blur(20px);
+}
+
+.hamOverlay {
+  position: fixed;
+  top: 5.4rem;
+  width: 100vh;
+  height: 100vh;
+  background: #000000a2;
+  z-index: 10;
+}
+
+.ham-button {
+  display: none;
+  background: none;
+  border: none;
+  height: 3.6rem;
+  width: 3.6rem;
+}
+
+.ham-icon {
+  margin-right: 10px;
+  height: 2.4rem;
+  width: 2.4rem;
+  fill: var(--brand-color-light2);
+}

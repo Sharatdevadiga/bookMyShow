@@ -2,15 +2,18 @@ import { Schema } from "mongoose";
 import mongoose from "mongoose";
 
 const bookMovieSchema = new Schema({
-  movie: Schema.Types.String,
-  slot: Schema.Types.String,
+  movie: {
+    title: { type: String, required: true },
+    poster: { type: String, required: true },
+  },
+  slot: { type: String, required: true },
   seats: {
-    A1: Schema.Types.Number,
-    A2: Schema.Types.Number,
-    A3: Schema.Types.Number,
-    A4: Schema.Types.Number,
-    D1: Schema.Types.Number,
-    D2: Schema.Types.Number,
+    A1: { type: [Number], default: [] },
+    A2: { type: [Number], default: [] },
+    A3: { type: [Number], default: [] },
+    A4: { type: [Number], default: [] },
+    D1: { type: [Number], default: [] },
+    D2: { type: [Number], default: [] },
   },
 });
 

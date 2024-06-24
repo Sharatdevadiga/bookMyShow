@@ -1,0 +1,76 @@
+.seatSelector-container {
+  padding: 6.4rem 1.2rem;
+  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
+    url("/background\ image.jpg");
+}
+
+.screen {
+  width: 30%;
+  min-width: 24rem;
+  height: 12rem;
+  /* opacity: 0.7; */
+  margin-bottom: 2rem;
+  transform: perspective(75px) rotateX(-10deg);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 24px 36px rgba(255, 255, 255, 0.3); /* Optional shadow for depth */
+  position: relative;
+  overflow: hidden;
+}
+
+.seatSelector-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.seat-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  /* transform: perspective(50px) rotateX(1deg); */
+}
+
+.seat-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.seat-button {
+  padding: 0.4rem 0.8rem;
+  width: 3.6rem;
+  height: 3.6rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  border-radius: 11px;
+  border: 2px solid var(--brand-color-dark1);
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+  background: none;
+  color: #fff;
+  transition: all 0.3s;
+}
+
+.seat-button:hover {
+  background-color: var(--brand-color-light1);
+}
+
+.seat-button-selected {
+  background: var(--brand-color) !important;
+}
+
+.seat-button:active {
+  transform: scale(0.96);
+}
+
+.seatSelector-container .button {
+  margin-top: 4.8rem;
+}
+
+.time-inScreen {
+  font-size: 1.2rem;
+  font-weight: 700;
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+}
