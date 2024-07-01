@@ -6,6 +6,8 @@ import ShowAlert from "../showAlert/ShowAlert";
 import axios from "axios";
 
 function BookTheShow() {
+  const URL = "https://bookmyshow-fdtn.onrender.com";
+
   const {
     selectedMovie,
     selectedTime,
@@ -44,7 +46,7 @@ function BookTheShow() {
     try {
       const res = await axios({
         method: "post",
-        url: "/api/booking",
+        url: `${URL}/api/booking`,
         data: {
           movie: selectedMovie,
           slot: selectedTime,
