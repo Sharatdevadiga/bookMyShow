@@ -53,7 +53,7 @@ function BookTheShow() {
           seats: selectedSeats,
         },
       });
-      console.log(res);
+      // console.log(res);
 
       if (
         res.status === 200 ||

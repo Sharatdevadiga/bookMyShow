@@ -12,7 +12,7 @@ function ShowAlert({ message, type = "error", alertKey }) {
   const { setIsPrevBookingOpen } = useContext(bookingContext);
 
   const handleClose = () => {
-    if (type === "success") setIsPrevBookingOpen((isOpen) => !isOpen);
+    if (type === "success") setIsPrevBookingOpen(() => true);
     setIsOpen(() => false);
   };
 
@@ -22,7 +22,7 @@ function ShowAlert({ message, type = "error", alertKey }) {
 
   useEffect(() => {
     const timeOutId = setTimeout(() => {
-      handleClose();
+      setIsPrevBookingOpen(() => false);
     }, 5000);
 
     return () => clearTimeout(timeOutId);
