@@ -53,8 +53,14 @@ function BookTheShow() {
           seats: selectedSeats,
         },
       });
+      console.log(res);
 
-      if (res.statusText === "OK") {
+      if (
+        res.status === 200 ||
+        res.status === 204 ||
+        res.data ||
+        res.status === "success"
+      ) {
         setAlert(
           "success",
           `Booking successful, (${selectedMovie.title} at ${selectedTime})`

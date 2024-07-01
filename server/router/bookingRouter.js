@@ -7,7 +7,7 @@ router.post("/api/booking", async (req, res) => {
   try {
     const booking = new Booking(req.body);
     await booking.save();
-    res.status(200).json(booking);
+    res.status(200).json({ status: "success", data: booking });
   } catch (err) {
     res.status(500).json({ status: "error", message: err.message });
   }
