@@ -7,7 +7,7 @@ import axios from "axios";
 
 function BookTheShow() {
   // const URL = "https://bookmyshow-fdtn.onrender.com";
-  const URL = "bookmyshow-production-f2e5.up.railway.app";
+  const URL = "https://bookmyshow-production-f2e5.up.railway.app";
 
   const {
     selectedMovie,
