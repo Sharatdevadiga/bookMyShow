@@ -69,6 +69,8 @@ Follow these simple steps to set up the project on your local machine for develo
 
 Thank you for visiting this project! I hope you find it useful and interesting. If you have any questions, feedback, or just want to say hi, please feel free to reach out.
 
-[LinkedIn](www.linkedin.com/in/sharath-devadiga) | [Portfolio](https://sharath-devadiga-portfolio.netlify.app)
+Linkedin -> https://www.linkedin.com/in/sharath-devadiga/
+
+Portfolio ->https://sharath-devadiga-portfolio.netlify.app
 
 Have a wonderful day! 😊
