@@ -3,6 +3,16 @@ import { Booking } from "../db/schema.js";
 
 const router = express.Router();
 
+app.get("/", (req, res) => {
+  try {
+    res
+      .status(200)
+      .json({ status: "success", message: "Welcome to the booking API" });
+  } catch (err) {
+    res.status(500).json({ status: "error", message: err.message });
+  }
+});
+
 router.post("/api/booking", async (req, res) => {
   try {
     const booking = new Booking(req.body);
