@@ -5,8 +5,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start:dev": "node --env-file=config.env server",
-    "start:prod": "node server"
+    "start": "node server"
   },
   "keywords": [],
   "author": "",
