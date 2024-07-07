@@ -3,7 +3,7 @@ import { Booking } from "../db/schema.js";
 
 const router = express.Router();
 
-app.get("/", (req, res) => {
+router.get("/", (req, res) => {
   try {
     res
       .status(200)
