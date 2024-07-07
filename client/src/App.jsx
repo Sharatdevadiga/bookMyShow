@@ -1,14 +1,25 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, Suspense, useEffect, useState } from "react";
 
-import Navbar from "./components/nav/Navbar";
-import Home from "./components/home/Home";
-import MovieSelector from "./components/movieSelector/MovieSelector";
-import Footer from "./components/footer/Footer";
-import TimeSlot from "./components/timeSlot/TimeSlot";
-import SeatSelector from "./components/seatSelector/SeatSelector";
-import PrevBooking from "./components/prevBooking/PrevBooking";
-import SliderButton from "./components/sliderButton/SliderButton";
+import { lazy } from "react";
+
+const Navbar = lazy(() => import("./components/nav/Navbar"));
+const Home = lazy(() => import("./components/home/Home"));
+const MovieSelector = lazy(() =>
+  import("./components/movieSelector/MovieSelector")
+);
+const Footer = lazy(() => import("./components/footer/Footer"));
+const TimeSlot = lazy(() => import("./components/timeSlot/TimeSlot"));
+const SeatSelector = lazy(() =>
+  import("./components/seatSelector/SeatSelector")
+);
+const PrevBooking = lazy(() => import("./components/prevBooking/PrevBooking"));
+const SliderButton = lazy(() =>
+  import("./components/sliderButton/SliderButton")
+);
+
+// Rest of the code remains the same
 import { seats } from "../public/data";
+import Spinner from "./components/spinner/Spinner";
 
 export const bookingContext = createContext();
 
@@ -86,28 +97,36 @@ function App() {
   };
 
   return (
-    <bookingContext.Provider value={contextValue}>
-      <SliderButton />
-      <section>
-        <Navbar />
-        <Home />
-      </section>
-      <section>
-        <PrevBooking />
-      </section>
-      <section>
-        <MovieSelector />
-      </section>
-      <section>
-        <TimeSlot />
-      </section>
-      <section>
-        <SeatSelector />
-      </section>
-      <section>
-        <Footer />
-      </section>
-    </bookingContext.Provider>
+    <Suspense
+      fallback={
+        <div className="page-spinner"> 
+          <Spinner /> Loading...
+        </div>
+      }
+    >
+      <bookingContext.Provider value={contextValue}>
+        <SliderButton />
+        <section>
+          <Navbar />
+          <Home />
+        </section>
+        <section>
+          <PrevBooking />
+        </section>
+        <section>
+          <MovieSelector />
+        </section>
+        <section>
+          <TimeSlot />
+        </section>
+        <section>
+          <SeatSelector />
+        </section>
+        <section>
+          <Footer />
+        </section>
+      </bookingContext.Provider>
+    </Suspense>
   );
 }
 

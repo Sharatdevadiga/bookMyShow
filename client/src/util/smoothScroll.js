@@ -3,9 +3,10 @@ export default function smoothScrollTo(elementId, time) {
   if (!targetElement) return;
 
   // Correct calculation of the target position to be absolute from the document's top
-  const targetPosition =
-    targetElement.getBoundingClientRect().top + window.pageYOffset;
-  const startPosition = window.pageYOffset;
+  const scrollTop =
+    document.documentElement.scrollTop || document.body.scrollTop;
+  const targetPosition = targetElement.getBoundingClientRect().top + scrollTop;
+  const startPosition = scrollTop;
   const distance = targetPosition - startPosition;
   const duration = time; // Duration in ms
   let startTime = null;

@@ -4,6 +4,7 @@ import { useContext, useState } from "react";
 import { bookingContext } from "../../App";
 import ShowAlert from "../showAlert/ShowAlert";
 import axios from "axios";
+import Spinner from "../spinner/Spinner";
 
 function BookTheShow() {
   // const URL = "https://bookmyshow-fdtn.onrender.com";
@@ -19,6 +20,7 @@ function BookTheShow() {
   const [bookingStatus, setBookingStatus] = useState(null);
   const [alertMessage, setAlertMessage] = useState(null);
   const [alertKey, setAlertKey] = useState();
+  const [isLoading, setIsLoading] = useState(false);
 
   async function bookTheShow() {
     function setAlert(code, message) {
@@ -43,6 +45,8 @@ function BookTheShow() {
       setAlert("error", "Please select at least one seat");
       return;
     }
+
+    setIsLoading(() => true);
 
     try {
       const res = await axios({
@@ -77,6 +81,8 @@ function BookTheShow() {
       }
     } catch (err) {
       setAlert("error", "Booking Failed, try again later");
+    } finally {
+      setIsLoading(() => false);
     }
   }
 
@@ -84,7 +90,7 @@ function BookTheShow() {
     <>
       <div className="flex-v-center book-the-show">
         <button className="button button-cta" onClick={() => bookTheShow()}>
-          Book The Show
+          {isLoading ? <Spinner /> : "Book Now"}
         </button>
       </div>
       {bookingStatus === "success" ? (

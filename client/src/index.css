@@ -108,6 +108,15 @@ body {
   position: relative;
 }
 
+.page-spinner {
+  width: 100vh;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.6rem;
+}
+
 /* NEDIA QUERRIES */
 @media screen and (max-width: 768px) {
   body .heading-primary {
